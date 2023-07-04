@@ -1,5 +1,47 @@
-:root{
+:root {
     --page-background-color: #f1f5f8;
-    --image-border-color:#4aa5e8;
-    --slide-buttons-color:#5d7a95;
+    --image-border-color: #4aa5e8;
+    --slide-buttons-color: #5d7a95;
+}
+
+/* Body */
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: var(--page-background-color);
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    padding: 3.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Image div */
+.image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5vw;
+}
+
+/* Buttons div */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Button */
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--slide-buttons-color);
+}
+
+/* Picture */
+img {
+    border: solid 5px var(--image-border-color);
+    border-radius: 5px;
 }
