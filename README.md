@@ -1,3 +1,3 @@
-# Document
+# Image Slider
 
-Description
+An image slider that you can add to any website
