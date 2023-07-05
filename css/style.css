@@ -45,3 +45,8 @@ img {
     border: solid 5px var(--image-border-color);
     border-radius: 5px;
 }
+
+/* Hidden elements class */
+.invisible {
+    display: none;
+}
