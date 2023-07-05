@@ -3,6 +3,7 @@ const img = document.querySelector("img");
 const btns = document.querySelector(".buttons");
 const prev = document.querySelector(".previous");
 const next = document.querySelector(".next");
+const image = document.querySelector(".image");
 console.log(img);
 console.log(btns);
 
@@ -22,6 +23,18 @@ const handleBtns = () => {
     next.classList.remove("invisible");
   }
 };
+
+// Fucntion Show Image
+const showImage = (id, direction) => {
+  img.setAttribute("src", "./img/img0" + id + ".jpg");
+};
+
+function reset_animation() {
+  image.style.animation = "none";
+  image.offsetHeight; /* trigger reflow */
+  image.style.animation = null;
+}
+
 handleBtns();
 console.log("Initial Id = " + id);
 
@@ -29,14 +42,19 @@ console.log("Initial Id = " + id);
 
 btns.addEventListener("click", (e) => {
   if (e.target.textContent == "Next") {
+    reset_animation();
+    image.style.animation = "leftToRight 1s";
     id++;
     handleBtns();
     img.setAttribute("src", "./img/img0" + id + ".jpg");
+    // image.style.transform = "translate(100)";
     console.log("Next btn");
     console.log("Next Id= " + id);
   } else if (e.target.textContent == "Prev") {
+    reset_animation();
     id--;
     img.setAttribute("src", "./img/img0" + id + ".jpg");
+    image.style.animation = "rightToLeft 1s";
     handleBtns();
     console.log("Prev button");
     console.log("Prev Id =" + id);

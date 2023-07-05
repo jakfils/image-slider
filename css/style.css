@@ -4,6 +4,26 @@
     --slide-buttons-color: #5d7a95;
 }
 
+@keyframes leftToRight {
+    0% {
+        transform: translate(calc((100% - 3.5vw)*-1));
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes rightToLeft {
+    0% {
+        transform: translate(calc((100% - 3.5vw)));
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
 /* Body */
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -17,13 +37,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* overflow: hidden; */
 }
 
 /* Image div */
 .image {
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5vw;
+    /* animation: leftToRight 5s; */
 }
 
 /* Buttons div */
