@@ -5,15 +5,13 @@ const prev = document.querySelector(".previous");
 const next = document.querySelector(".next");
 const image = document.querySelector(".image");
 const images = document.querySelector(".images");
-console.log(img);
-console.log(btns);
 
 // Intital image id
 let id = 1;
 // Number of images
 const numberOfImgs = 7;
-
-let position = img.width+10;
+// All images Div abscissia
+let imagesAbscissa = 0;
 
 // Function handle Buttons
 const handleBtns = () => {
@@ -27,46 +25,29 @@ const handleBtns = () => {
   }
 };
 
-// Fucntion Show Image
-// const showImage = (id, direction) => {
-//   img.setAttribute("src", "./img/img0" + id + ".jpg");
-// };
-
-// function reset_animation() {
-//   image.style.animation = "none";
-//   image.offsetHeight; /* trigger reflow */
-//   image.style.animation = null;
-// }
-
 handleBtns();
-console.log("Initial Id = " + id);
 
 // Buttons event Click listener
-console.log(img.width);
-
-
 btns.addEventListener("click", (e) => {
   if (e.target.textContent == "Next") {
-    // reset_animation();
-    images.style.transform = `translateX(-${position}px)`;
-    position+=position;
-    console.log(position);
-    
-
+    images.style.transform = `translateX(-${
+      imagesAbscissa + img.width + 10
+    }px)`;
+    imagesAbscissa += img.width + 10;
     id++;
     handleBtns();
-
-    console.log("Next btn");
-    console.log("Next Id= " + id);
   } else if (e.target.textContent == "Prev") {
-    // reset_animation();
+    images.style.transform = `translateX(-${
+      imagesAbscissa - (img.width + 10)
+    }px)`;
+    imagesAbscissa -= img.width + 10;
     id--;
     img.setAttribute("src", "./img/img0" + id + ".jpg");
-    // image.style.animation = "rightToLeft 1s";
     handleBtns();
-    console.log("Prev button");
-    console.log("Prev Id =" + id);
-
-    console.log(id);
   }
+});
+
+// Reload Page on window Resize
+window.addEventListener("resize", (e) => {
+  location.reload();
 });

@@ -4,25 +4,6 @@
     --slide-buttons-color: #5d7a95;
 }
 
-@keyframes leftToRight {
-    0% {
-        transform: translate(0);
-    }
-
-    100% {
-        transform: translateX(-1280px);
-    }
-}
-
-@keyframes rightToLeft {
-    0% {
-        transform: translate(calc((100% - 3.5vw)));
-    }
-
-    100% {
-        transform: translate(0);
-    }
-}
 
 /* Body */
 body {
@@ -37,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 90%;
     overflow: hidden;
 }
 
@@ -46,6 +27,8 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    transition: transform 600ms;
+    margin-bottom: 20px;
 }
 
 /* Image div */
@@ -54,7 +37,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    /* animation: leftToRight 5s; */
 }
 
 img {
