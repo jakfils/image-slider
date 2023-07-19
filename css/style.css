@@ -6,11 +6,11 @@
 
 @keyframes leftToRight {
     0% {
-        transform: translate(calc((100% - 3.5vw)*-1));
+        transform: translate(0);
     }
 
     100% {
-        transform: translate(0);
+        transform: translateX(-1280px);
     }
 }
 
@@ -33,18 +33,32 @@ body {
 /* Container */
 .container {
     margin: 0 auto;
-    padding: 3.5vw;
+    /* padding: 3.5vw; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* overflow: hidden; */
+    width: 50%;
+    overflow: hidden;
+}
+
+
+.images {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 /* Image div */
 .image {
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
+    width: 100%;
     /* animation: leftToRight 5s; */
+}
+
+img {
+    width: 100%;
 }
 
 /* Buttons div */
